@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Naveen Kumar Pasupuleti - Senior QA Automation Engineer Resume showcasing expertise in Salesforce, Selenium, Java, and JavaScript."
+    />
+    <title>Naveen Kumar Pasupuleti | Resume</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <style>
+      .dark-mode {
+        background-color: #1c1c1e;
+        color: #f2f2f7;
+      }
+      .dark-mode .container {
+        background-color: #2c2c2e;
+        color: #f2f2f7;
+      }
+      .dark-mode h1,
+      .dark-mode h2,
+      .dark-mode .entry-title,
+      .dark-mode .entry-dates {
+        color: #ffffff;
+      }
+      .dark-mode .subtitle,
+      .dark-mode .entry-subtitle,
+      .dark-mode .contact-info,
+      .dark-mode ul li {
+        color: #cccccc;
+      }
+      .dark-mode a {
+        color: #0a84ff;
+      }
+      /* Page Setup */
+      @page {
+        size: A4;
+        margin: 10mm 20mm 20mm 20mm;
+      }
+
+      /* Base Reset & Typography */
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f7;
+        color: #1d1d1f;
+        font-family: -apple-system, BlinkMacSystemFont, "San Francisco", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      /* Container */
+      .container {
+        max-width: 850px;
+        margin: 30px auto;
+        background-color: #ffffff;
+        padding: 48px;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      }
+
+      /* Header */
+      header {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 36px;
+        position: relative;
+        padding-bottom: 24px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      }
+      .header-top {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      .main-info {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+        margin-bottom: 20px;
+        max-width: 700px;
+      }
+      .main-info h1 {
+        font-size: 32px;
+        font-weight: 700;
+        margin: 0;
+        color: #1d1d1f;
+        letter-spacing: -0.5px;
+      }
+      .subtitle {
+        font-size: 17px;
+        font-weight: 500;
+        color: #6c6c70;
+        margin: 0;
+        letter-spacing: 0.2px;
+      }
+      .header-bottom {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+      }
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        font-size: 14px;
+        color: #6c6c70;
+        text-align: center;
+      }
+      .contact-row {
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+      }
+      .contact-item {
+        display: inline-flex;
+        align-items: center;
+        line-height: 1;
+      }
+      .contact-item i {
+        width: 10px;
+        height: 10px;
+        margin-right: 8px;
+        color: #6c6c70;
+      }
+      .contact-info a {
+        color: #444;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s ease;
+      }
+      .contact-info a:hover {
+        color: #007aff;
+      }
+      .header-actions {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .header-actions button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #6c6c70;
+        font-size: 14px;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        transition: all 0.2s;
+      }
+      .header-actions button:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+        color: #007aff;
+      }
+      .dark-mode .header-actions button:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #0a84ff;
+      }
+      #timeDisplay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 13px;
+        color: #8e8e93;
+        font-weight: 400;
+      }
+
+      /* Section Headings with Emojis */
+      h2 {
+        font-size: 18px;
+        font-weight: 600;
+        margin: 32px 0 12px 0;
+        color: #1d1d1f;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+      h2 .material-icons-outlined {
+        font-size: 18px;
+        color: #8e8e93;
+      }
+
+      /* Section Content Layout */
+      .section-content {
+        margin-bottom: 16px;
+      }
+      .entry {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+      .entry .entry-details {
+        flex: 1;
+      }
+      /* Make sure entry-title and entry-dates are on the same line */
+      .entry-details > .entry-title,
+      .entry-dates {
+        display: inline-block;
+        vertical-align: top;
+        margin-top: 0;
+      }
+      .entry-title {
+        font-size: 15px;
+        font-weight: 600;
+        color: #1d1d1f;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        align-items: center;
+        margin-right: 10px;
+      }
+      .entry-subtitle {
+        font-weight: 500;
+        color: #6c6c70;
+      }
+      .entry-dates {
+        font-size: 15px;
+        font-weight: 500;
+        white-space: nowrap;
+        color: #1d1d1f;
+        margin-left: auto;
+      }
+      ul {
+        margin: 8px 0 0 20px;
+        padding: 0;
+      }
+      ul li {
+        margin-bottom: 4px;
+      }
+
+      /* Grid Layouts for Skills and Certifications */
+      .grid-two {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        header {
+          padding-top: 40px;
+        }
+        .header-top {
+          margin-top: 16px;
+        }
+        .main-info h1 {
+          font-size: 28px;
+        }
+        .subtitle {
+          font-size: 16px;
+        }
+        .header-actions {
+          top: 8px;
+          right: 8px;
+        }
+        #timeDisplay {
+          top: 8px;
+          left: 8px;
+        }
+        .contact-row {
+          flex-direction: column;
+          gap: 12px;
+          align-items: center;
+        }
+        .contact-info {
+          text-align: center;
+        }
+        .project-link {
+          display: block;
+          margin-top: 8px;
+        }
+        .entry {
+          flex-direction: row;
+          align-items: flex-start;
+        }
+        .entry-dates {
+          margin-left: auto;
+          margin-top: 0 !important;
+        }
+      }
+
+      /* Section Separator: Reduced spacing with a light grey line */
+      .section-content:not(:last-of-type) {
+        border-bottom: 1px solid #d3d3d3;
+        padding-bottom: 16px;
+        margin-bottom: 16px;
+      }
+
+      /* Radar Animation for Zomato */
+      .radar {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        background-color: #28a745;
+        border-radius: 50%;
+        margin-right: 8px;
+        position: relative;
+      }
+      .radar::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        border: 2px solid #28a745;
+        border-radius: 50%;
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+        animation: radarPulse 2s infinite;
+      }
+      @keyframes radarPulse {
+        0% {
+          transform: translate(-50%, -50%) scale(1);
+          opacity: 1;
+        }
+        100% {
+          transform: translate(-50%, -50%) scale(2);
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div id="timeDisplay"></div>
+        <div class="header-actions">
+          <button id="toggleTheme" aria-label="Toggle Theme">
+            <i data-lucide="sun" id="themeIcon"></i>
+          </button>
+          <button onclick="downloadPDF()" aria-label="Download PDF">
+            <i data-lucide="download"></i>
+          </button>
+        </div>
+
+        <div class="header-top">
+          <div class="main-info">
+            <h1>NAVEEN KUMAR PASUPULETI</h1>
+            <p class="subtitle">
+              Senior QA Automation Engineer – Salesforce | Selenium | Java |
+              JavaScript
+            </p>
+          </div>
+        </div>
+
+        <div class="header-bottom">
+          <div class="contact-info">
+            <div class="contact-row">
+              <div class="contact-item">
+                <i data-lucide="mail"></i>
+                <a href="mailto:pasupuletinaveen.qa@gmail.com"
+                  >pasupuletinaveen.qa@gmail.com</a
+                >
+              </div>
+              <div class="contact-item">
+                <i data-lucide="phone"></i>
+                <a href="tel:+919490380061">+91 9490380061</a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="contact-item">
+                <i data-lucide="linkedin"></i>
+                <a
+                  href="https://www.linkedin.com/in/naveenkumarpasupuleti"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >linkedin.com/in/naveenkumarpasupuleti</a
+                >
+              </div>
+              <div class="contact-item">
+                <i data-lucide="globe"></i>
+                <a
+                  href="https://www.naveenpasupuleti.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >naveenpasupuleti.com</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main>
+        <!-- Career Objective Section -->
+        <section class="section-content">
+          <h2>📝 Career Objective</h2>
+          <p>
+            Result-driven QA Automation Engineer with 4+ years of experience in
+            software testing (manual & automation), including 3.6 years of
+            Salesforce QA expertise. Skilled in test automation frameworks using
+            Selenium, Playwright, and WebdriverIO with JavaScript/TypeScript.
+            Adept at Agile processes, regression testing, and CI/CD pipelines.
+            Seeking to leverage robust automation engineering skills to drive
+            quality and efficiency in software delivery.
+          </p>
+        </section>
+
+        <!-- Professional Summary Section -->
+        <section class="section-content">
+          <h2>💼 Professional Summary</h2>
+          <div class="entry">
+            <div class="entry-details">
+              <div class="entry-title">
+                Capgemini
+                <span class="entry-subtitle">Consultant</span>
+              </div>
+              <ul>
+                <li>
+                  4+ years of experience in Software Testing, including
+                  Functional, System, Regression, Smoke, and Automation testing.
+                </li>
+                <li>
+                  Extensive experience testing Salesforce CRM platforms (Sales,
+                  Service, Financial Service Cloud).
+                </li>
+                <li>
+                  Hands-on experience in Automation Testing using Selenium
+                  WebDriver, Playwright (TypeScript), and WebdriverIO with
+                  JavaScript.
+                </li>
+                <li>
+                  Proficient in automation of test scenarios for regression and
+                  stage sanity using CI/CD pipelines (GitHub, Docker).
+                </li>
+                <li>
+                  Strong API testing experience using Postman and MuleSoft; good
+                  exposure to REST API validations.
+                </li>
+                <li>
+                  Skilled in analyzing business requirements, designing test
+                  plans, and debugging automation issues.
+                </li>
+                <li>
+                  Solid understanding of SDLC, STLC, and Agile/Scrum
+                  methodologies.
+                </li>
+                <li>
+                  Familiarity with tools such as JIRA, QTest, Confluence,
+                  Developer Console, GCP, and Big Query.
+                </li>
+                <li>
+                  Active participant in code reviews, defect tracking, and QA
+                  strategy meetings.
+                </li>
+              </ul>
+            </div>
+            <div class="entry-dates">Jan 2023 - Present</div>
+          </div>
+          <div class="entry">
+            <div class="entry-details">
+              <div class="entry-title">
+                Capgemini
+                <span class="entry-subtitle">Associate Consultant</span>
+              </div>
+              <ul>
+                <li>
+                  Contributed to test automation framework development and
+                  maintenance
+                </li>
+                <li>
+                  Performed functional and regression testing for Salesforce
+                  applications
+                </li>
+              </ul>
+            </div>
+            <div class="entry-dates">May 2021 - Dec 2022</div>
+          </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section-content">
+          <h2>💼 Projects</h2>
+          <div class="entry">
+            <div class="entry-details">
+              <div class="entry-title">
+                CMOS – Complaint Management Operating System
+                <span class="entry-subtitle">QA Automation Engineer</span>
+              </div>
+              <ul>
+                <li>
+                  Designed, developed, and maintained scalable automation
+                  frameworks using Playwright with TypeScript for
+                  Salesforce-based applications.
+                </li>
+                <li>
+                  Executed regression, stage sanity, and system testing using
+                  automated scripts integrated with CI/CD pipelines via GitHub
+                  Actions.
+                </li>
+                <li>
+                  Collaborated with cross-functional teams including developers,
+                  testers, and product managers to review requirements and
+                  ensure test coverage.
+                </li>
+                <li>
+                  Automated test cases related to multi-object validations
+                  (e.g., Case, Task, Product) across multiple user personas.
+                </li>
+                <li>
+                  Analyzed automation test results, reported defects using JIRA,
+                  and worked closely with developers for quick resolution.
+                </li>
+                <li>
+                  Maintained test documentation including test plans, scenarios,
+                  and test case repositories in Confluence and QTest.
+                </li>
+                <li>
+                  Participated in code reviews and sprint retrospectives to
+                  enhance test coverage and automation stability.
+                </li>
+                <li>
+                  Mentored junior QA members on automation practices and
+                  framework usage.
+                </li>
+              </ul>
+            </div>
+            <div class="entry-dates">Apr 2022 - Present</div>
+          </div>
+        </section>
+
+        <!-- Education Section -->
+        <section class="section-content">
+          <h2>🎓 Education</h2>
+          <div class="entry">
+            <div class="entry-details">
+              <div class="entry-title">
+                Jawaharlal Nehru Technological University
+                <span class="entry-subtitle">Bachelor of Technology</span>
+              </div>
+            </div>
+            <div class="entry-dates">2014 - 2018</div>
+          </div>
+        </section>
+
+        <!-- Technical Skills Section -->
+        <section class="section-content">
+          <h2>🎨 Skills</h2>
+          <div class="grid-two">
+            <div>
+              <p><strong>Automation Tools</strong></p>
+              <ul>
+                <li>Selenium WebDriver</li>
+                <li>WebdriverIO</li>
+                <li>Playwright</li>
+                <li>Postman</li>
+              </ul>
+            </div>
+            <div>
+              <p><strong>Languages</strong></p>
+              <ul>
+                <li>Core Java</li>
+                <li>JavaScript</li>
+                <li>TypeScript</li>
+                <li>SQL, SOQL</li>
+              </ul>
+            </div>
+          </div>
+          <div class="grid-two">
+            <div>
+              <p><strong>CRM/Cloud</strong></p>
+              <ul>
+                <li>Salesforce (Sales, Service, Financial Services Cloud)</li>
+                <li>GCP</li>
+              </ul>
+            </div>
+            <div>
+              <p><strong>Testing Types</strong></p>
+              <ul>
+                <li>Functional</li>
+                <li>System</li>
+                <li>Regression</li>
+                <li>Smoke, SIT, E2E, UAT</li>
+              </ul>
+            </div>
+          </div>
+          <div class="grid-two">
+            <div>
+              <p><strong>CI/CD & VCS</strong></p>
+              <ul>
+                <li>Jenkins</li>
+                <li>Git</li>
+                <li>GitHub</li>
+                <li>GitHub Actions</li>
+              </ul>
+            </div>
+            <div>
+              <p><strong>Project Tools</strong></p>
+              <ul>
+                <li>JIRA</li>
+                <li>Confluence</li>
+                <li>Slack</li>
+                <li>VS Code, Eclipse, Data Loader</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="section-content">
+          <h2>✅ Certifications</h2>
+          <div class="grid-two">
+            <ul>
+              <li>Salesforce Certified Associate</li>
+              <li>Salesforce Platform Developer I</li>
+              <li>Salesforce Certified AI Associate</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Languages Section -->
+        <section class="section-content">
+          <h2>🗣 Languages</h2>
+          <ul>
+            <li>Telugu: Native Proficiency</li>
+            <li>English: Professional Proficiency</li>
+            <li>Hindi: Limited Working Proficiency</li>
+          </ul>
+        </section>
+      </main>
+    </div>
+    <script>
+      // Lucide Icons Init
+      lucide.createIcons();
+
+      // Time and Day Display
+      function updateTime() {
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString([], {
+          hour: "numeric",
+          minute: "2-digit",
+        });
+        const dayStr = now.toLocaleDateString([], { weekday: "long" });
+        document.getElementById(
+          "timeDisplay"
+        ).textContent = `${timeStr}, ${dayStr}`;
+      }
+      updateTime();
+      setInterval(updateTime, 60000);
+
+      // Theme Toggle
+      const toggleButton = document.getElementById("toggleTheme");
+      const themeIcon = document.getElementById("themeIcon");
+      toggleButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+        themeIcon.setAttribute(
+          "data-lucide",
+          document.body.classList.contains("dark-mode") ? "moon" : "sun"
+        );
+        lucide.createIcons();
+      });
+
+      // PDF Download
+      function downloadPDF() {
+        const element = document.querySelector(".container");
+        html2pdf()
+          .set({
+            margin: 0,
+            filename: "Naveen_Kumar_Pasupuleti_Resume.pdf",
+            image: { type: "jpeg", quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+          })
+          .from(element)
+          .save();
+      }
+    </script>
+  </body>
+</html>
