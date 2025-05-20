@@ -16,12 +16,13 @@
     />
     <style>
       .dark-mode {
-        background-color: #1c1c1e;
-        color: #f2f2f7;
+        background-color: #000000;
+        color: #ffffff;
       }
       .dark-mode .container {
-        background-color: #2c2c2e;
-        color: #f2f2f7;
+        background-color: #000000;
+        color: #ffffff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
       }
       .dark-mode h1,
       .dark-mode h2,
@@ -33,10 +34,28 @@
       .dark-mode .entry-subtitle,
       .dark-mode .contact-info,
       .dark-mode ul li {
-        color: #cccccc;
+        color: #ffffff;
       }
       .dark-mode a {
-        color: #0a84ff;
+        color: #ffffff;
+      }
+      .dark-mode a:hover {
+        color: #3a9bff;
+      }
+      .dark-mode #timeDisplay {
+        color: #ffffff;
+      }
+      .dark-mode .header-actions button {
+        color: #ffffff;
+      }
+      .dark-mode .contact-item i {
+        color: #ffffff;
+      }
+      .dark-mode .contact-info a {
+        color: #ffffff;
+      }
+      .dark-mode .main-info h1 {
+        color: #ffffff;
       }
       /* Page Setup */
       @page {
@@ -172,8 +191,8 @@
         color: #007aff;
       }
       .dark-mode .header-actions button:hover {
-        background-color: rgba(255, 255, 255, 0.1);
-        color: #0a84ff;
+        background-color: rgba(255, 255, 255, 0.15);
+        color: #3a9bff;
       }
       #timeDisplay {
         position: absolute;
