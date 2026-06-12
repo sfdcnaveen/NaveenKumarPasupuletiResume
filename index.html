@@ -195,7 +195,38 @@
         font-weight: 600;
         color: #1a1a1a;
       }
+      .download-btn {
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        background-color: #ffffff;
+        color: #1a1a1a;
+        border: 1px solid #e5e5e5;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        transition: all 0.2s ease;
+        z-index: 1000;
+      }
+      .download-btn:hover {
+        background-color: #f8f8f8;
+        border-color: #d4d4d4;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+      .download-btn svg {
+        width: 20px;
+        height: 20px;
+      }
       @media print {
+        .download-btn {
+          display: none !important;
+        }
         body {
           padding: 0;
         }
@@ -230,16 +261,21 @@
     </style>
   </head>
   <body>
-    <div class="container">
+    <button class="download-btn" onclick="downloadPDF()" aria-label="Download Resume" title="Download Resume">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+      </svg>
+    </button>
+    <div class="container" id="resume-container">
       <header>
         <h1>Naveen Kumar Pasupuleti</h1>
         <div class="title">
-          SDET – Salesforce | Playwright | JavaScript | TypeScript
+          Salesforce QA Engineer | Service Cloud | Sales Cloud | Financial Services Cloud
         </div>
         <div class="contact-info">
           <span
             >📧
-            <a href="mailto:pasupuletinaveen.qa@gmail.com"
+            <a href="mailto:pasupulatink@gmail.com"
               >pasupulatink@gmail.com</a
             ></span
           >
@@ -265,15 +301,14 @@
         <section>
           <h2>Professional Summary</h2>
           <p class="summary">
-            Results-driven SDET with 5+ years of expertise in Salesforce test
-            automation and quality assurance across Sales Cloud, Service Cloud,
-            and Financial Services Cloud. Proven track record in architecting
-            scalable automation frameworks using Playwright, Selenium WebDriver,
-            and WebdriverIO with JavaScript/TypeScript. Specialized in
-            implementing CI/CD pipelines, API testing, and driving quality
-            initiatives in Agile environments. Delivered comprehensive testing
-            solutions that reduced regression testing cycles by 60% while
-            maintaining 95%+ test coverage across enterprise applications.
+            Results-driven Salesforce QA Engineer with 5+ years of expertise in
+            comprehensive quality assurance across Sales Cloud, Service Cloud,
+            and Financial Services Cloud. Proven track record in validating complex
+            Salesforce implementations including OmniStudio (OmniScripts), Email-to-Case,
+            Web-to-Case, and intricate Case Management workflows. Adept at functional
+            testing, integration testing, and complementing manual QA with scalable
+            automation frameworks. Dedicated to driving quality initiatives in Agile
+            environments and ensuring seamless deployment of enterprise Salesforce applications.
           </p>
         </section>
 
@@ -285,25 +320,22 @@
               <span class="company-name">TestVagrant Technologies</span>
               <span class="date">July 2025 - Present</span>
             </div>
-            <div class="job-title">SDET</div>
+            <div class="job-title">Salesforce QA Engineer</div>
             <ul>
               <li>
-                Architected and implemented end-to-end test automation framework
-                for Salesforce-based real estate platform using Playwright and
-                TypeScript, achieving 85% automation coverage and reducing
-                manual testing efforts by 70%
+                Led comprehensive QA testing for a Salesforce-based real estate
+                platform, focusing on Sales and Service Cloud functionalities to
+                ensure robust end-to-end business workflows
               </li>
               <li>
-                Established CI/CD pipeline integration with GitHub Actions for
-                automated regression testing, enabling continuous quality
-                validation across 15+ Salesforce modules with sub-30-minute
-                execution cycles
+                Validated complex Salesforce integrations and custom configurations,
+                significantly reducing production defects by 40% and improving overall
+                release velocity through meticulous functional testing
               </li>
               <li>
-                Led cross-functional collaboration with product, development,
-                and QA teams to define comprehensive test strategies, resulting
-                in 40% reduction in production defects and improved release
-                velocity
+                Complemented manual testing efforts by implementing an automation
+                framework using Playwright, enabling continuous quality validation
+                across 15+ Salesforce modules
               </li>
             </ul>
           </div>
@@ -313,25 +345,27 @@
               <span class="company-name">Capgemini</span>
               <span class="date">Jan 2023 - June 2025</span>
             </div>
-            <div class="job-title">Consultant</div>
+            <div class="job-title">Salesforce QA Consultant</div>
             <ul>
               <li>
-                Developed and maintained robust test automation frameworks using
-                Selenium WebDriver, Playwright with TypeScript, and WebdriverIO
-                with JavaScript for Salesforce CRM applications, supporting 500+
-                automated test cases across multiple environments
+                Conducted extensive functional testing for Salesforce CRM applications,
+                validating core platform features, custom objects, and user
+                permissions across multiple environments
               </li>
               <li>
-                Implemented comprehensive API testing strategy using Postman and
-                MuleSoft, validating REST API integrations and reducing
-                integration defects by 55% through systematic validation of
-                request/response payloads and error handling
+                Implemented comprehensive integration testing strategy using Postman and
+                MuleSoft, validating Salesforce REST API integrations and reducing
+                integration defects by 55%
               </li>
               <li>
-                Spearheaded Agile QA practices including sprint planning, daily
-                standups, and retrospectives while managing defect lifecycle in
-                JIRA and maintaining test documentation in Confluence,
-                contributing to 98% on-time sprint delivery
+                Spearheaded Agile QA practices, managing the defect lifecycle in
+                JIRA, maintaining test documentation in Confluence, and supporting
+                QA with targeted test automation using Selenium and Playwright
+              </li>
+              <li>
+                Designed and led comprehensive training sessions for QA engineers with
+                no prior Salesforce knowledge, coaching them to efficiently test Salesforce
+                applications, write SOQL queries, and validate REST API integrations
               </li>
             </ul>
           </div>
@@ -341,24 +375,23 @@
               <span class="company-name">Capgemini</span>
               <span class="date">May 2021 - Dec 2022</span>
             </div>
-            <div class="job-title">Associate Consultant</div>
+            <div class="job-title">Associate QA Consultant</div>
             <ul>
               <li>
                 Designed and executed comprehensive functional, regression, and
                 smoke test suites for Salesforce Sales Cloud and Service Cloud
                 applications, validating complex business workflows and ensuring
-                95%+ defect detection rate
+                a 95%+ defect detection rate
               </li>
               <li>
-                Collaborated with development teams to implement automated
-                testing best practices, conducting code reviews and establishing
-                quality gates that reduced escaped defects by 45%
+                Collaborated with Salesforce developers to establish rigorous
+                quality gates, conducting test reviews and validating declarative
+                changes vs programmatic customizations, reducing escaped defects by 45%
               </li>
               <li>
-                Performed system integration testing (SIT) and user acceptance
-                testing (UAT) coordination for major releases, ensuring seamless
-                deployment of 12+ production releases with zero critical
-                post-deployment issues
+                Performed System Integration Testing (SIT) and coordinated User
+                Acceptance Testing (UAT) for major Salesforce releases, ensuring
+                seamless deployment of 12+ production releases
               </li>
             </ul>
           </div>
@@ -372,25 +405,23 @@
               <span class="company-name">Aldar Properties</span>
               <span class="date">Aug 2025 - Present</span>
             </div>
-            <div class="job-title">Test Automation Consultant</div>
+            <div class="job-title">Salesforce QA Consultant</div>
             <ul>
               <li>
-                Designed scalable test automation architecture for
-                Salesforce-based property management system, implementing page
-                object model with Playwright to support 300+ automated test
-                scenarios across sales and leasing workflows
+                Led Salesforce QA testing for a property management system,
+                validating sales and leasing workflows, complex data models,
+                and user permissions across various Salesforce clouds
               </li>
               <li>
-                Established quality metrics dashboard and reporting framework
-                using Allure Reports, providing real-time visibility into test
-                execution results, code coverage, and defect trends to
-                stakeholders
+                Established a robust QA process and quality metrics dashboard,
+                providing real-time visibility into test coverage, defect trends,
+                and application stability to key stakeholders
               </li>
               <li>
-                Mentored 5-member QA team on automation best practices,
-                framework design patterns, and CI/CD integration, improving team
-                productivity by 50% and reducing framework maintenance overhead
-                by 35%
+                Trained a 5-member QA team (who initially had no prior Salesforce
+                experience) to become highly proficient in Salesforce testing, coaching
+                them on writing SOQL queries, verifying complex integrations, and testing
+                REST APIs, which improved overall team productivity by 50%
               </li>
             </ul>
           </div>
@@ -402,25 +433,31 @@
               >
               <span class="date">Apr 2022 - June 2025</span>
             </div>
-            <div class="job-title">Test Management</div>
+            <div class="job-title">Salesforce QA Engineer</div>
             <ul>
               <li>
-                Built enterprise-grade test automation framework using
-                Playwright with TypeScript for Salesforce Service Cloud
-                application, automating 400+ test cases covering Cases, Tasks,
-                and Product modules with 92% pass rate
+                Tested the CMOS Salesforce application for ANZ Bank, centralizing Case
+                Management and validating end-to-end workflows across Service Cloud and
+                Financial Services Cloud
               </li>
               <li>
-                Integrated automated test suites with GitHub Actions CI/CD
-                pipeline and Docker containerization, enabling parallel test
-                execution across multiple environments and reducing feedback
-                cycle from 6 hours to 45 minutes
+                Validated critical Case Management and Task creation processes, including
+                testing complex Queue Assignments and Knowledge Base integrations to
+                ensure seamless representative workflows
+              </li>
+              <li>
+                Conducted in-depth functional testing on OmniStudio implementations,
+                specifically validating a Case Creation and Closure forms backed by OmniScripts
+              </li>
+              <li>
+                Thoroughly verified omnichannel support features, including Salesforce
+                in-app notifications, Email-to-Case, and Web-to-Case integrations
               </li>
               <li>
                 Established comprehensive test documentation standards and
-                managed test case repository in QTest, facilitating knowledge
-                transfer and enabling team scalability while maintaining 100%
-                test case traceability to requirements
+                managed test case repository in QTest, maintaining 100%
+                test case traceability to requirements while complementing QA
+                with an automation framework
               </li>
             </ul>
           </div>
@@ -459,9 +496,9 @@
               <h3>DevOps & Tools</h3>
               <ul>
                 <li>Git, GitHub, GitHub Actions</li>
-                <li>Jenkins, Docker</li>
-                <li>JIRA, Confluence, QTest</li>
-                <li>VS Code, Eclipse, GCP, BigQuery</li>
+                <li>Docker</li>
+                <li>JIRA, Confluence</li>
+                <li>VS Code, Eclipse</li>
               </ul>
             </div>
           </div>
@@ -523,5 +560,35 @@
         </section>
       </main>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script>
+      function downloadPDF() {
+        const element = document.getElementById('resume-container');
+        const btn = document.querySelector('.download-btn');
+        
+        btn.style.display = 'none';
+
+        setTimeout(() => {
+          const width = element.offsetWidth;
+          const height = element.offsetHeight;
+
+          const opt = {
+            margin:       [40, 40],
+            filename:     'Naveen_Salesforce_QA_Resume.pdf',
+            image:        { type: 'jpeg', quality: 1 },
+            html2canvas:  { scale: 2, useCORS: true, logging: false },
+            jsPDF:        { 
+              unit: 'px', 
+              format: [width + 80, height + 80],
+              orientation: 'portrait' 
+            }
+          };
+
+          html2pdf().set(opt).from(element).save().then(() => {
+            btn.style.display = 'flex';
+          });
+        }, 100);
+      }
+    </script>
   </body>
 </html>
